@@ -1,0 +1,6 @@
+// How to import SQL file in phpmyadmin
+1. Start XAMPP server
+2. Go to http://localhost/phpmyadmin
+3. Create a new database named "hoster".
+4. Go to import and choose the hoster.sql file.
+5. All tables will be imported to the that database.

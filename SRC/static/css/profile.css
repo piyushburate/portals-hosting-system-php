@@ -1,0 +1,98 @@
+.profile_container {
+    width: auto;
+    height: 100%;
+    background: #f4f6fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.profile_container .title {
+    width: 100%;
+    height: 80px !important;
+    background: white;
+    border-bottom: var(--section-divider-width) solid var(--section-divider-color);
+    padding: 10px 30px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    text-align: start;
+}
+
+.profile_container .profile_view {
+    max-width: 500px;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-right: var(--section-divider-width) solid var(--section-divider-color);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 0 0;
+}
+
+.profile_container .profile_view .input {
+    width: 100%;
+}
+
+.profile_container .profile_view .input form {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.profile_container .profile_view .input label {
+    width: 100%;
+}
+
+.profile_container .profile_view .input input {
+    width: calc(100% - 95px);
+    height: 45px;
+    background: #eee;
+    margin: 10px 0;
+    border-radius: 4px;
+    color: #333;
+}
+
+.profile_container .profile_view .input button {
+    width: 85px;
+    height: 45px;
+    margin: 10px 0;
+    border-radius: 4px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.profile_container .profile_view .input.display_name button {
+    background: #07f;
+}
+
+.profile_container .profile_view .input.email button {
+    background: #0a0;
+}
+
+.profile_container .profile_view .input.username button {
+    background: rgb(0, 170, 162);
+}
+
+.profile_container .profile_view .input.password button {
+    background: #f04;
+}
+
+@media screen and (max-width:768px) {
+    .profile_container {
+        align-items: center;
+    }
+
+    .profile_container .title {
+        justify-content: center;
+    }
+
+    .profile_container .profile_view {
+        border-left: var(--section-divider-width) solid var(--section-divider-color);
+    }
+}

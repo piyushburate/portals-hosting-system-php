@@ -1,0 +1,43 @@
+{
+    "0": {
+        "name": "job",
+        "joining_txt": "Apply For Job",
+        "user_status": {
+            "0": ["left", "2"],
+            "1": ["applied", "4"],
+            "2": ["rejected", "2"],
+            "3": ["accepted", "3"],
+            "4": ["reviewed", "1"],
+            "5": ["selected", "5"]
+        }
+    },
+    "1": {
+        "name": "event",
+        "joining_txt": "Participate in Event",
+        "user_status": {
+            "0": ["left", "2"],
+            "1": ["participated", "4"],
+            "2": ["rejected", "2"]
+        }
+    },
+    "2": {
+        "name": "contest",
+        "joining_txt": "Join Contest",
+        "user_status": {
+            "0": ["left", "2"], 
+            "1": ["joined", "4"],
+            "2": ["rejected", "2"],
+            "3": ["selected", "5"]
+        }
+    },
+    "3": {
+        "name": "tournament",
+        "joining_txt": "Join Tournament",
+        "user_status": {
+            "0": ["left", "2"],
+            "1": ["joined", "4"],
+            "2": ["rejected", "2"],
+            "3": ["selected", "5"]
+        }
+    }
+}

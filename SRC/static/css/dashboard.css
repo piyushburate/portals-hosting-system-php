@@ -1,0 +1,142 @@
+:root {
+    --sidebar-width: 250px;
+}
+
+.dashboard {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+        'navb navb navb'
+        'side main main'
+        'side main main';
+    grid-template-rows: var(--navbar-height) 1fr 1fr;
+    grid-template-columns: var(--sidebar-width) 1fr 1fr;
+}
+
+.dashboard .sidebar {
+    background: white;
+    border-right: var(--section-divider-width) solid var(--section-divider-color);
+    grid-area: side;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    overflow: auto;
+}
+
+.sidebar .create_new {
+    width: 100%;
+    display: flex;
+}
+
+.sidebar .create_new button {
+    width: auto;
+    flex: 1 1 100%;
+    height: 45px;
+    font-size: 1.1rem;
+    background: black;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0px 1px 10px #ddd;
+    margin: 10px 15px;
+}
+
+.sidebar .menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.sidebar .menu .menuitem {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 6px 0;
+    padding: 4px 0;
+    border-radius: 4px;
+    position: relative;
+    color: #555;
+    transition: all 0.1s linear;
+    cursor: pointer;
+}
+
+.sidebar .menu .menuitem.active {
+    background: #f6f6f6;
+    color: black;
+}
+
+.sidebar .menu .menuitem:hover {
+    background: #f6f6f6;
+    color: black;
+}
+
+.sidebar .menu .menuitem:hover>* {
+    transition: all 0.2s ease-in-out;
+    transform: translateX(5px);
+}
+
+.sidebar .menu .menuitem.active::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: black;
+    border-radius: 4px;
+    position: absolute;
+    top: 14px;
+    left: 0;
+}
+
+.sidebar .menu .menuitem .icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px 0 10px;
+    padding: 9px;
+    cursor: pointer;
+}
+
+.sidebar .menu .menuitem .title {
+    width: auto;
+    cursor: pointer;
+}
+
+.dashboard .main {
+    height: calc(100vh - var(--navbar-height));
+    overflow: hidden;
+    background: white;
+    grid-area: main;
+}
+
+/* Sidebar Break point */
+@media screen and (max-width:768px) {
+    .dashboard {
+        grid-template-areas:
+            'navb'
+            'main';
+        grid-template-rows: var(--navbar-height) 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .navbar .sidebar_toggle {
+        display: flex;
+    }
+
+    .dashboard .sidebar {
+        max-width: var(--sidebar-width);
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: -200%;
+        z-index: 199;
+        right: 50px;
+        transition: all 0.3s ease-out;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+}
